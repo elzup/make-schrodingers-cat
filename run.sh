@@ -7,7 +7,7 @@ mkdir $REPO_DIR
 cd $REPO_DIR
 git init
 
-echo $(()) > cat
+echo $(()) > $CAT_FILE
 if [[ $(($RANDOM % 2)) -eq 0 ]]; then
 	echo 'dead' > $CAT_FILE
 else 
@@ -23,4 +23,5 @@ git add .
 git commit -m "hide box" --quiet
 
 gh repo create --private
-git push origin HEAD -u
+
+echo "rm ../schrodingers-box"
